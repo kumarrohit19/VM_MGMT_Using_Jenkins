@@ -1,0 +1,109 @@
+Started by user Rohit Kumar
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in C:\ProgramData\Jenkins\.jenkins\workspace\Create_Tiny_Linux_VM_Using_Template
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Deploy VM)
+[Pipeline] withCredentials
+Masking supported pattern matches of %VC_PASS%
+[Pipeline] {
+[Pipeline] powershell
+
+Name                           Port  User                          
+----                           ----  ----                          
+indprdvc01.mylab.local         443   MYLAB\svc_vmware              
+Selecting host from cluster...
+Deploying VM from template...
+Customizing CPU and Memory...
+WARNING: The 'Version' property of VirtualMachine type is deprecated. Use the 'HardwareVersion' property instead.
+
+PowerState              : PoweredOff
+Version                 : v8
+HardwareVersion         : vmx-08
+Notes                   : Name: yVM (a very small virtual machine)
+                          Release date: 11th November 2015
+                          For more information, please visit: cloudarchitectblog.wordpress.com
+Guest                   : Demo_Linux_VM:
+NumCpu                  : 1
+CoresPerSocket          : 1
+MemoryMB                : 1024
+MemoryGB                : 1
+VMHostId                : HostSystem-host-21
+VMHost                  : indprdesx03.mylab.local
+VApp                    : 
+FolderId                : Folder-group-v4
+Folder                  : vm
+ResourcePoolId          : ResourcePool-resgroup-9
+ResourcePool            : Resources
+PersistentId            : 503e06ed-c77a-a1a9-c256-25ef663aeb66
+UsedSpaceGB             : 0.3359375
+ProvisionedSpaceGB      : 0.74982452392578125
+DatastoreIdList         : {Datastore-datastore-12}
+HARestartPriority       : ClusterRestartPriority
+HAIsolationResponse     : AsSpecifiedByCluster
+DrsAutomationLevel      : AsSpecifiedByCluster
+VMSwapfilePolicy        : Inherit
+VMResourceConfiguration : CpuShares:Normal/1000 MemShares:Normal/480
+GuestId                 : otherLinuxGuest
+CreateDate              : 3/13/2026 4:12:33 AM
+SEVEnabled              : False
+BootDelayMillisecond    : 0
+MigrationEncryption     : Opportunistic
+MemoryHotAddEnabled     : False
+MemoryHotAddIncrement   : 
+MemoryHotAddLimit       : 
+CpuHotAddEnabled        : False
+CpuHotRemoveEnabled     : False
+Name                    : Demo_Linux_VM
+CustomFields            : {}
+ExtensionData           : VMware.Vim.VirtualMachine
+Id                      : VirtualMachine-vm-5012
+Uid                     : /VIServer=mylab\svc_vmware@indprdvc01.mylab.local:443/VirtualMachine=VirtualMachine-vm-5012/
+
+Updating Network...
+WARNING: Specifying a distributed port group name as network name is no longer supported. Use the -Portgroup parameter.
+
+MacAddress       : 00:50:56:be:50:47
+WakeOnLanEnabled : True
+NetworkName      : Data_Traffic
+Type             : e1000
+ParentId         : VirtualMachine-vm-5012
+Parent           : Demo_Linux_VM
+Uid              : /VIServer=mylab\svc_vmware@indprdvc01.mylab.local:443/VirtualMachine=VirtualMachine-vm-5012/NetworkA
+                   dapter=4000/
+ConnectionState  : NotConnected, GuestControl, StartConnected
+ExtensionData    : VMware.Vim.VirtualE1000
+Id               : VirtualMachine-vm-5012/4000
+Name             : Network adapter 1
+
+Resizing Disk...
+
+StorageFormat   : Thin
+Persistence     : Persistent
+DiskType        : Flat
+Filename        : [vsanDatastore] af8eb369-58b4-9281-8f60-bc2411a78c2f/Demo_Linux_VM.vmdk
+CapacityKB      : 1048576
+CapacityGB      : 1
+ParentId        : VirtualMachine-vm-5012
+Parent          : Demo_Linux_VM
+Uid             : /VIServer=mylab\svc_vmware@indprdvc01.mylab.local:443/VirtualMachine=VirtualMachine-vm-5012/HardDisk=
+                  3000/
+ConnectionState : 
+ExtensionData   : VMware.Vim.VirtualDisk
+Id              : VirtualMachine-vm-5012/3000
+Name            : Hard disk 1
+
+VM deployment completed: Demo_Linux_VM
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

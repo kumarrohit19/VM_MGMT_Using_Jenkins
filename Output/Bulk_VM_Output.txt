@@ -1,0 +1,234 @@
+Started by user Rohit Kumar
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in C:\ProgramData\Jenkins\.jenkins\workspace\Create_Bulk_Linux_VM
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Deploy Bulk VMs)
+[Pipeline] withCredentials
+Masking supported pattern matches of %VC_PASS%
+[Pipeline] {
+[Pipeline] powershell
+
+Name                           Port  User                          
+----                           ----  ----                          
+indprdvc01.mylab.local         443   MYLAB\svc_vmware              
+Creating VM: web01
+powershell.exe : Set-VM : 3/12/2026 9:45:04 PM	Set-VM		The operation for the entity "web01" failed with the following message: "Memory 
+At C:\ProgramData\Jenkins\.jenkins\workspace\Create_Bulk_Linux_VM@tmp\durable-e041e1f5\powershellWrapper.ps1:3 char:1
++ & powershell -NoProfile -NonInteractive -ExecutionPolicy Bypass -Comm ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Set-VM : 3/12/2...ssage: "Memory :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+(RAM) size (655) is invalid.". Memory (RAM) size (655) is invalid.	
+At D:\Jenkins\VMWare_Automation\scripts\Create_Bulk_Linux_VM.ps1:28 char:5
++     Set-VM -VM $newvm `
++     ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Set-VM], GenericVmConfigFault
+    + FullyQualifiedErrorId : Client20_TaskServiceImpl_CheckServerSideTaskUpdates_OperationFailed,VMware.VimAutomation 
+   .ViCore.Cmdlets.Commands.SetVM
+ 
+WARNING: Specifying a distributed port group name as network name is no longer supported. Use the -Portgroup parameter.
+
+MacAddress       : 00:50:56:be:14:5e
+WakeOnLanEnabled : True
+NetworkName      : Data_Traffic
+Type             : e1000
+ParentId         : VirtualMachine-vm-5013
+Parent           : web01
+Uid              : /VIServer=mylab\svc_vmware@indprdvc01.mylab.local:443/VirtualMachine=VirtualMachine-vm-5013/NetworkA
+                   dapter=4000/
+ConnectionState  : NotConnected, GuestControl, StartConnected
+ExtensionData    : VMware.Vim.VirtualE1000
+Id               : VirtualMachine-vm-5013/4000
+Name             : Network adapter 1
+
+
+StorageFormat   : Thin
+Persistence     : Persistent
+DiskType        : Flat
+Filename        : [vsanDatastore] 9795b369-72f7-c68a-59dc-bc2411a78c2f/web01.vmdk
+CapacityKB      : 1048576
+CapacityGB      : 1
+ParentId        : VirtualMachine-vm-5013
+Parent          : web01
+Uid             : /VIServer=mylab\svc_vmware@indprdvc01.mylab.local:443/VirtualMachine=VirtualMachine-vm-5013/HardDisk=
+                  3000/
+ConnectionState : 
+ExtensionData   : VMware.Vim.VirtualDisk
+Id              : VirtualMachine-vm-5013/3000
+Name            : Hard disk 1
+
+VM created successfully: web01
+Creating VM: web02
+Set-VM : 3/12/2026 9:45:14 PM	Set-VM		The operation for the entity "web02" failed with the following message: "Memory 
+(RAM) size (655) is invalid.". Memory (RAM) size (655) is invalid.	
+At D:\Jenkins\VMWare_Automation\scripts\Create_Bulk_Linux_VM.ps1:28 char:5
++     Set-VM -VM $newvm `
++     ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Set-VM], GenericVmConfigFault
+    + FullyQualifiedErrorId : Client20_TaskServiceImpl_CheckServerSideTaskUpdates_OperationFailed,VMware.VimAutomation 
+   .ViCore.Cmdlets.Commands.SetVM
+ 
+
+MacAddress       : 00:50:56:be:24:43
+WakeOnLanEnabled : True
+NetworkName      : Data_Traffic
+Type             : e1000
+ParentId         : VirtualMachine-vm-5014
+Parent           : web02
+Uid              : /VIServer=mylab\svc_vmware@indprdvc01.mylab.local:443/VirtualMachine=VirtualMachine-vm-5014/NetworkA
+                   dapter=4000/
+ConnectionState  : NotConnected, GuestControl, StartConnected
+ExtensionData    : VMware.Vim.VirtualE1000
+Id               : VirtualMachine-vm-5014/4000
+Name             : Network adapter 1
+
+
+StorageFormat   : Thin
+Persistence     : Persistent
+DiskType        : Flat
+Filename        : [vsanDatastore] a195b369-211d-dfd1-70cf-bc2411a78c2f/web02.vmdk
+CapacityKB      : 1048576
+CapacityGB      : 1
+ParentId        : VirtualMachine-vm-5014
+Parent          : web02
+Uid             : /VIServer=mylab\svc_vmware@indprdvc01.mylab.local:443/VirtualMachine=VirtualMachine-vm-5014/HardDisk=
+                  3000/
+ConnectionState : 
+ExtensionData   : VMware.Vim.VirtualDisk
+Id              : VirtualMachine-vm-5014/3000
+Name            : Hard disk 1
+
+VM created successfully: web02
+Creating VM: app01
+Set-VM : 3/12/2026 9:45:25 PM	Set-VM		The operation for the entity "app01" failed with the following message: "Memory 
+(RAM) size (655) is invalid.". Memory (RAM) size (655) is invalid.	
+At D:\Jenkins\VMWare_Automation\scripts\Create_Bulk_Linux_VM.ps1:28 char:5
++     Set-VM -VM $newvm `
++     ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Set-VM], GenericVmConfigFault
+    + FullyQualifiedErrorId : Client20_TaskServiceImpl_CheckServerSideTaskUpdates_OperationFailed,VMware.VimAutomation 
+   .ViCore.Cmdlets.Commands.SetVM
+ 
+
+MacAddress       : 00:50:56:be:8e:49
+WakeOnLanEnabled : True
+NetworkName      : Data_Traffic
+Type             : e1000
+ParentId         : VirtualMachine-vm-5015
+Parent           : app01
+Uid              : /VIServer=mylab\svc_vmware@indprdvc01.mylab.local:443/VirtualMachine=VirtualMachine-vm-5015/NetworkA
+                   dapter=4000/
+ConnectionState  : NotConnected, GuestControl, StartConnected
+ExtensionData    : VMware.Vim.VirtualE1000
+Id               : VirtualMachine-vm-5015/4000
+Name             : Network adapter 1
+
+
+StorageFormat   : Thin
+Persistence     : Persistent
+DiskType        : Flat
+Filename        : [vsanDatastore] ab95b369-fb2a-63dd-7f12-bc2411a78c2f/app01.vmdk
+CapacityKB      : 1048576
+CapacityGB      : 1
+ParentId        : VirtualMachine-vm-5015
+Parent          : app01
+Uid             : /VIServer=mylab\svc_vmware@indprdvc01.mylab.local:443/VirtualMachine=VirtualMachine-vm-5015/HardDisk=
+                  3000/
+ConnectionState : 
+ExtensionData   : VMware.Vim.VirtualDisk
+Id              : VirtualMachine-vm-5015/3000
+Name            : Hard disk 1
+
+VM created successfully: app01
+Creating VM: db01
+WARNING: The 'Version' property of VirtualMachine type is deprecated. Use the 'HardwareVersion' property instead.
+
+PowerState              : PoweredOff
+Version                 : v8
+HardwareVersion         : vmx-08
+Notes                   : Name: yVM (a very small virtual machine)
+                          Release date: 11th November 2015
+                          For more information, please visit: cloudarchitectblog.wordpress.com
+Guest                   : db01:
+NumCpu                  : 2
+CoresPerSocket          : 1
+MemoryMB                : 1024
+MemoryGB                : 1
+VMHostId                : HostSystem-host-21
+VMHost                  : indprdesx03.mylab.local
+VApp                    : 
+FolderId                : Folder-group-v4
+Folder                  : vm
+ResourcePoolId          : ResourcePool-resgroup-9
+ResourcePool            : Resources
+PersistentId            : 503e3374-0917-118f-9591-506debebfb7a
+UsedSpaceGB             : 0.3515625
+ProvisionedSpaceGB      : 0.76544952392578125
+DatastoreIdList         : {Datastore-datastore-12}
+HARestartPriority       : ClusterRestartPriority
+HAIsolationResponse     : AsSpecifiedByCluster
+DrsAutomationLevel      : AsSpecifiedByCluster
+VMSwapfilePolicy        : Inherit
+VMResourceConfiguration : CpuShares:Normal/1000 MemShares:Normal/480
+GuestId                 : otherLinuxGuest
+CreateDate              : 3/13/2026 4:42:33 AM
+SEVEnabled              : False
+BootDelayMillisecond    : 0
+MigrationEncryption     : Opportunistic
+MemoryHotAddEnabled     : False
+MemoryHotAddIncrement   : 
+MemoryHotAddLimit       : 
+CpuHotAddEnabled        : False
+CpuHotRemoveEnabled     : False
+Name                    : db01
+CustomFields            : {}
+ExtensionData           : VMware.Vim.VirtualMachine
+Id                      : VirtualMachine-vm-5016
+Uid                     : /VIServer=mylab\svc_vmware@indprdvc01.mylab.local:443/VirtualMachine=VirtualMachine-vm-5016/
+
+
+MacAddress       : 00:50:56:be:6a:cf
+WakeOnLanEnabled : True
+NetworkName      : Data_Traffic
+Type             : e1000
+ParentId         : VirtualMachine-vm-5016
+Parent           : db01
+Uid              : /VIServer=mylab\svc_vmware@indprdvc01.mylab.local:443/VirtualMachine=VirtualMachine-vm-5016/NetworkA
+                   dapter=4000/
+ConnectionState  : NotConnected, GuestControl, StartConnected
+ExtensionData    : VMware.Vim.VirtualE1000
+Id               : VirtualMachine-vm-5016/4000
+Name             : Network adapter 1
+
+
+StorageFormat   : Thin
+Persistence     : Persistent
+DiskType        : Flat
+Filename        : [vsanDatastore] b695b369-6984-8377-0b93-bc2411a78c2f/db01.vmdk
+CapacityKB      : 2097152
+CapacityGB      : 2
+ParentId        : VirtualMachine-vm-5016
+Parent          : db01
+Uid             : /VIServer=mylab\svc_vmware@indprdvc01.mylab.local:443/VirtualMachine=VirtualMachine-vm-5016/HardDisk=
+                  3000/
+ConnectionState : 
+ExtensionData   : VMware.Vim.VirtualDisk
+Id              : VirtualMachine-vm-5016/3000
+Name            : Hard disk 1
+
+VM created successfully: db01
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

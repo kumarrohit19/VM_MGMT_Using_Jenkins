@@ -1,0 +1,52 @@
+Started by user Rohit Kumar
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in C:\ProgramData\Jenkins\.jenkins\workspace\VM_Snapshot_Mgmt
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Run Snapshot Job)
+[Pipeline] withCredentials
+Masking supported pattern matches of %VC_PASS%
+[Pipeline] {
+[Pipeline] powershell
+
+Name                           Port  User                          
+----                           ----  ----                          
+indprdvc01.mylab.local         443   MYLAB\svc_vmware              
+Processing VM: Tiny-Linux-01
+WARNING: The 'Quiesced' property of Snapshot type is deprecated and will be removed in a future release.
+WARNING: The 'Parent' property of Snapshot type is deprecated. Use the 'ParentSnapshot' property instead.
+
+Description       : Snapshot created from Jenkins
+Created           : 3/12/2026 8:05:46 PM
+Quiesced          : False
+PowerState        : PoweredOff
+VM                : Tiny-Linux-01
+VMId              : VirtualMachine-vm-3008
+Parent            : JenkinsSnapshot-Test-2
+ParentSnapshotId  : VirtualMachineSnapshot-snapshot-5002
+ParentSnapshot    : JenkinsSnapshot-Test-2
+Children          : 
+SizeMB            : 36.01895809173583984375
+SizeGB            : 0.0351747637614607810974121094
+IsCurrent         : True
+IsReplaySupported : False
+ExtensionData     : VMware.Vim.VirtualMachineSnapshotTree
+Id                : VirtualMachineSnapshot-snapshot-5003
+Name              : JenkinsSnapshot
+Uid               : /VIServer=mylab\svc_vmware@indprdvc01.mylab.local:443/Snapshot=VirtualMachineSnapshot-snapshot-5003
+                    /
+
+Snapshot created on Tiny-Linux-01
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
